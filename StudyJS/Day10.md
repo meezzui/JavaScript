@@ -6,8 +6,22 @@ ionViewWillEnter() {
  }
 ```
 #### Object.entries()란??🧐
-+ object에 직접있는 enumerable 속성 [key, value] 쌍에 해당하는 배열을 반환한다. 
-+ 속성의 순서는 개체의 속성 값을 수동으로 반복하여 주어진 순서와 동일하다.
-+ 사용법
- 
- 
++ 객체를 배열로 만들어 준다.
++ 객체의 키와 값을 `[key, value]`의 배열로 반환한다.(객체가 배열로 바뀜에 따라 key와 value는 순서성을 가지게 됨)
++ 사용법 및 결과
+  + `Object.entries`를 사용하면 객체가 2차원 배열이 된다. 따라서 key와 value가 순서성을 가지게 된다. 
+  ```node
+  const object1 = {
+     a: 'apple',
+     b: 'banana',
+     c: 'cocoa'
+    }
+  let objToArr = Object.entries(object1);
+  console.log(objToArr)
+  
+  // 결과
+  0 : ["a", "apple"]
+  1 : ["b", "banana"]
+  2 : ["c", "cocoa"]
+  ```
+#### Object.entries, reduce를 이용한 방법(ES8이 지원되는 브라우저에서만 가능)
