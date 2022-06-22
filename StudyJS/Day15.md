@@ -39,6 +39,8 @@
     + `data(){}` 안에 선언해준다.
   + `:idx`를 바인딩하여 사용할 이름을 지정해준다.(selIdx)
     + `data(){}` 안에 선언해준다.
+    + `selIdx: null` 또는 `selIdx: 0`으로 해도 되는데 기본값으로 '전체'가 선택되어져 있게 하고싶다면 selIdx: 0 으로 해야한다. 
+    + 왜냐하면 카테고리 컴포넌트단에서 `:checked="idx === undefined ? c === 0 : c === idx"` 이렇게 `idx`와 리스트의 인덱스 값이 같을 경우 선택되어지게 해놨기 때문이다. 
   + `@select-category`: `$emit`으로 보낸 `select-category`의 객체를 사용할 함수 이름을 지정해준다. 
 + 그리고 `selectCategory`함수에 넘겨받은 `category`와 `idx`를 사용해준다.
   + 코딩방법은 두가지❗❗❗
