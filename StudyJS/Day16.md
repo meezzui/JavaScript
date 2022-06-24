@@ -32,4 +32,39 @@
   const today = new Date();
   const year = today.getDate();
   ```
-  
+#### 적용해보기
+```node
+data() {
+  return {
+    year: [],
+    month: [],
+    day: [],
+    bthdt: {
+      year: '',
+      month: '',
+      day: ''
+    },
+    age: 0
+  }
+}
+methods:{
+  setAge() {
+    // 만 나이 계산
+    const today = new Date()
+    const bthDate = new Date(this.bthdt.year, this.bthdt.month, this.bthdt.day)
+
+    let tempAge = today.getFullYear() - bthDate.getFullYear()
+    const month = today.getMonth() - bthDate.getMonth()
+    if (month < 0 || (month === 0 && today.getDate() < bthDate.getDate())) {
+      tempAge--
+    }
+
+    // 만 나이에 따른 연령대 세팅
+    tempAge = tempAge.toString()
+    this.age = tempAge.replace(/.$/, '0')
+    this.age = this.age > 50 ? 50 : Number(this.age)
+
+    this.$setAppData('main-age', this.age)
+  }
+}
+```
