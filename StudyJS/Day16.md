@@ -68,3 +68,9 @@ methods:{
   }
 }
 ```
++ `const today = new Date()`: Date()생성자 생성
++ `const bthDate = new Date(this.bthdt.year, this.bthdt.month, this.bthdt.day)` : `data(){}`에 선언해준 `bthdt`객체의 각각의 이름을 써주어서 년도,월,날짜를 반환하게 한다.
++ `let tempAge = today.getFullYear() - bthDate.getFullYear()`: 지금 년도에서 선택된 년도를 빼준다.
++ `const month = today.getMonth() - bthDate.getMonth()`: 지금 월에서 선택된 월을 빼준다.
++ `if (month < 0 || (month === 0 && today.getDate() < bthDate.getDate()))`
+  + 만약 월이 0보다 작거나 월이 0이랑 같으면서 오늘 날짜가 선택된 날짜(태어난 일)보다 작으면 나이를 하나 줄여준다.
