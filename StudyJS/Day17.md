@@ -11,3 +11,17 @@
 + `this.emitter.on()`
   + 이벤트를 생성해주는 메소드로 `this.emitter.emit()`를 사용하기 위해선 `this.emitter.on()`으로 등록을 해주어야 한다.
   + 즉, 특정 상황에 실행시킬 리스너 함수를 `Emitter` 안에 등록한다는 의미를 갖고 있다. 
++ 예시
+```node
+// 이벤트 발생
+success: () => {
+  _this.emitter.emit('showMarketingAgreement')
+}
+
+// 이벤트가 발생된 곳에 보낼 것
+mounted() {
+  this.emitter.on('showMarketingAgreement', _ => {
+    PushNotificationUtilization(this) //이벤트 발생시 호출
+  })
+}
+```
