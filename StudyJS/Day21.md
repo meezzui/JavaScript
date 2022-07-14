@@ -21,7 +21,7 @@
   ```
   
 #### 모달창 띄우는 예시
-+ `const modal = await modalController` `vu`e의 `modalController` 라이브러리 사용
++ `const modal = await modalController` `vue`의 `modalController` 라이브러리 사용
 + 모달로 띄울 페이지를 `import`하여 `import`시켜준 이름을 `comp: findAccount` 이렇게 적어준다.
 + `class:`이 부분은 해당 모달창에 적용되는 css 클래스 이름이다. 이름을 같이 `props`로 넘겨주면 해당 모달창의 크기를 적용할 수 있다.
   + 해당 페이지에서는 모달창의 크기를 커스텀할 수 없다.(css가 안 먹힘) 
