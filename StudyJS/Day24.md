@@ -53,7 +53,26 @@
   ```
   + `ionViewDidEnter()`: 페이지가 엑티브 되고 나서 실행된다. 즉, 페이지 표시할때 마다 실행되며 페이지가 뜰때마다 갱신된다.
     + 이 함수 안에 `api주소`가 적힌 파일을 `import`한 `getInfo()`를 사용하여 회원 아이디를 가져온다.
-    + 그리고 이 안에서 `getServeyInfo()`
+    + 그리고 이 안에서 `getServeyInfo()`함수를 타게 한다.
+
+  ```node
+  // 설문조사 조회
+    async getServeyInfo() {
+      try {
+        const res = await getServey(this.custId)
+        this.serveyInfo = res.data
+        if (res.data) {
+          if (this.serveyInfo.winStatus === 'Y') {
+          // 당첨 팝업 띄우는 공간
+          } else {
+            // 당첨되지 않은 팝업 띄우는 공간
+          }
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  ```
 
 
 
