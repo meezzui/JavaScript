@@ -5,6 +5,21 @@
 #### append()와 appendChild() 차이✨
 + `append()`
   +  여러 개의 노드와 문자를 추가 할 수 있다.
+  ```node
+  const div = document.createElement('div');
+  const span = document.createElement('span');
+  const p = document.createElement('p');
+
+  document.body.append(div, 'hello', span, p);
+
+  // result
+  <body>
+    <div></div>
+    hello
+    <span></span>
+    <p></p>
+  </body>
+  ```
 + `appendChild()`
   + 오직 Node 객체만 받을 수 있다.
   ```node
