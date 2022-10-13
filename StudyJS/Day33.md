@@ -27,6 +27,6 @@ async sortingListBtn() {
   this.params.orderGbn = 'DST' // orderGbn 값은 거리순인 'DST'로 지정해준다.
   this.storeList = [] // 스토어 리스트 목록 초기화 - 초기화를 안 해주면 기존 리스트 밑으로 조회된 스토어들이 아래로 계속 쌓이게 된다.
 
-  await this.getStoreList(this.params) // 가까운 거리에 있는 스토어 목록을 보여주기 위해서는 받아온 중심값이 필요한데 
+  await this.getStoreList(this.params) // 가까운 거리에 있는 스토어 목록을 보여주기 위해서는 받아온 중심값이 필요한데 그 값을 목록 소팅할 때 넣어주어야 한다. 그래서 기존에 형식과 같은 형식으로 값을 넣어서 보내주었다.
 }
 ```
