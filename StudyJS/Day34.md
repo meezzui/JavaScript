@@ -24,3 +24,20 @@
   }
   ```
 
+#### 알게 된 점
++ data(){} 부분에 `params`로 아래와 같이 선언해주었다.
+```node
+data(){
+  params: {
+    ctgrSeqNo: 0,
+    orderGbn: 'REG',
+    plNo: '',
+    page: 1,
+    size: 40
+  }
+ userLongi: this.$store.getters.defaultLongitude,
+ userLati: this.$store.getters.defaultLatitude
+}
+```
++ 이렇게 선언해주면 params안에 있는 것은 this.params. 이런식으로 선언하여 값을 변경해줄 수 있는데 버튼 클릭 시 받아오는 지도의 사용자 위치 값도 보내줘야 해서 this.params형식으로 값을 보내주었다.
++ 그런데 페이지를 나갔다 와도 
