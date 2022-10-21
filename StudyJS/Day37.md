@@ -52,8 +52,23 @@ Access to script at 'file:///C:/경로/components/header.html' from origin 'null
     + `http://127.0.0.1:8080` 이 url로 접속하면 에러가 사라진다!!
   + 즉, 서버에 올리면 해결이 된다❗️❗️❗️
 + 그렇다면 왜 이런 문제가 발생하는 것일까⁉️
-  + 
+  + 로컬시스템에서 로컬 파일 리소스를 요청할 때는 origin(출처)이 `null`로 넘어가기 때문에 `CORS`에러가 발생한다.
 
+#### SOP (Same Origin Policy - 동일 출처 정책)
++ `SOP`는 '동일 출처 정책' 이다. 어떤 출처(origin)에서 불러온 문서나 스크립트가 다른 출처에서 가져온 리소스와 상호작용하는 것을 제한하는 브라우저의 보안 방식이다.
++ 이 때 다른 출처와 같은 출처를 구분하는 기준은 URI의 '프로토콜 호스트 포트 가 같은가'이다.
+```node
+scheme(protocol)	host	(port)	resource
+    프로토콜        호스트    포트
+http://	www.example.com	(:80)	/folder/file.html
+```
++ 포트까지의 부분이 같다면 같은 출처,다르면 다른 출처로 간주
++ 그러나 이러한 정책이 모든 방식의 요청에 적용 되는 것은 아니다⁉️
++ 예를 들어, `<img>` 태그로 다른 도메인의 이미지 파일을 가져오거나 `<link>` 태그로 다른 도메인의 CSS를 가져오거나 `<script>` 태그로 다른 도메인의 `javascript`를 가져오는 것
+그 외에도 `<video>, <audio>, <object>, <embed>, <applet>`태그에는 동일 출처 정책이 적용되지 않는다.
++ `SOP`는 `script`에서 `XMLHttpRequest`나 `Fetch API`를 사용해 다른 출처에 리소스를 요청할 때 적용된다.
+SOP는 script에서 XMLHttpRequest나 Fetch API를 사용해 다른 출처에 리소스를 요청할 때 적용됩니다.
++ 결국 `CORS` 에러로 불리는 에러가 발생하는 이유는 이 `SOP`가 적용되는 방식으로 다른 출처의 자원에 접근하려 했기 때문이었고 `CORS`는 이런 경우 `cross-origin HTTP` 요청을 실행하여 액세스 권한을 부여하도록 하는 매커니즘을 가르키는 말이다.
 
 
 
