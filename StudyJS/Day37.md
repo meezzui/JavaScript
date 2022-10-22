@@ -69,7 +69,9 @@ http://	www.example.com	(:80)	/folder/file.html
 + `SOP`는 `script`에서 `XMLHttpRequest`나 `Fetch API`를 사용해 다른 출처에 리소스를 요청할 때 적용된다.
 SOP는 script에서 XMLHttpRequest나 Fetch API를 사용해 다른 출처에 리소스를 요청할 때 적용됩니다.
 + 결국 `CORS` 에러로 불리는 에러가 발생하는 이유는 이 `SOP`가 적용되는 방식으로 다른 출처의 자원에 접근하려 했기 때문이었고 `CORS`는 이런 경우 `cross-origin HTTP` 요청을 실행하여 액세스 권한을 부여하도록 하는 매커니즘을 가르키는 말이다.
-
++ 예를 들어, `<img>` 태그로 다른 도메인의 이미지 파일을 가져오거나 `<link>` 태그로 다른 도메인의 `CSS`를 가져오거나 `<script>` 태그로 다른 도메인의 `javascript`를 가져오는 것 그 외에도 <video> <audio> <object> <embed> <applet> 태그
+에는 동일 출처 정책이 적용되지 않는다.
++ 즉, `SOP`는 `script`에서 `XMLHttpRequest`나 `Fetch API`를 사용해 다른 출처에 리소스를 요청할 때 적용.
 
 
 
