@@ -72,6 +72,9 @@ SOP는 script에서 XMLHttpRequest나 Fetch API를 사용해 다른 출처에 �
 + 예를 들어, `<img>` 태그로 다른 도메인의 이미지 파일을 가져오거나 `<link>` 태그로 다른 도메인의 `CSS`를 가져오거나 `<script>` 태그로 다른 도메인의 `javascript`를 가져오는 것 그 외에도 <video> <audio> <object> <embed> <applet> 태그
 에는 동일 출처 정책이 적용되지 않는다.
 + 즉, `SOP`는 `script`에서 `XMLHttpRequest`나 `Fetch API`를 사용해 다른 출처에 리소스를 요청할 때 적용.
++ 그런데‼️‼️ `SOP`에 위배될 게 없어 보이는데 이런 에러가 난다⁉️
+  + `HTML` 파일을 로컬에서 로드할 경우 자바스크립트 모듈 보안 요구사항으로 인해 `CORS` 오류가 발생한다고 한다.
+  + 그렇기 때문에 서버에 올려 `프로토콜 호스트 포트`를 같게 만들면 `CORS` 에러가 해결되었던 것이다.
 
 
 
