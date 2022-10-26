@@ -13,9 +13,12 @@
     + jQuery에서의 `$(this)`는 자기자신을 선택하는경우에 많이 사용한다.
     + 이벤트를 실행시킬때 DOM 조작을 하면서 어떠한 선택자에 이벤트를 부여하고 사용자가 이벤트를 실행시키면 이벤트가 적용된 자기자신이 `$(this)` 가 된다.
     + 즉, 여기에서 `$(this)`는 클릭하는 버튼 태그를 의미하는 것이다.  => `$(this) = $('button')`
-+ `if($('button').hasClass("active") === true){`
++ `if($('button').hasClass("active") === true){` 
+    + `hasClass()`: 이 함수는 해당 클래스가 있는지 여부를 나타낸다.`(true/false)`
+    + : button 태그에 active 클래스가 있으면 즉, `true` 이면
 + `$('.active').siblings('.dot').css('display','block');`
   + `.siblings()`:선택한 요소의 형제 요소 중에서 지정한 선택자에 해당하는 요소를 모두 선택
+  + 형제 요소 중 `.dot`이라는 클래스를 `display: block` 시켜주라는 의미이다.
 ```node
 <script>
   $(document).ready(function(){
@@ -34,22 +37,27 @@
   <div class="header_contain">
     <div class="menu_sec">
       <div class="btn">
-        <button type="button" class="menu_btn button"><a>법인카드 소명등록</a></button>
+        <button type="button" class="menu_btn button"><a href="../callingRequestList.html">법인카드 소명등록</a></button>
         <div class="dot" style="display: none;"></div>
       </div>
       <div class="btn">
-        <button type="button" class="menu_btn button"><a>감사결과공개</a></button>
+        <button type="button" class="menu_btn button"><a href="../openTestResult.html">감사결과공개</a></button>
         <div class="dot" style="display: none;"></div>
       </div>
       <div class="btn">
-        <button type="button" class="menu_btn button"><a>청념윤리유의사항</a></button>
+        <button type="button" class="menu_btn button"><a href="../ethicsNotice.html">청념윤리유의사항</a></button>
         <div class="dot" style="display: none;"></div>
       </div>
       <div class="btn">
-        <button type="button" class="menu_btn button"><a>공지사항</a></button>
+        <button type="button" class="menu_btn button"><a href="../notice.html">공지사항</a></button>
         <div class="dot" style="display: none;"></div>
       </div>
     </div>
   </div>
 </body>
 ```
+
+#### 위와 같은 방법으로 코드를 짤 경우 문제 발생🛑
++ 메뉴를 클릭 시 변경되는 css가 잠깐 보였다가 다시 원래 상태로 돌아가게 된다.
++ 왜 이러한 현상이 일어나는 걸까❓❓❓
+  + 그 이유는 
