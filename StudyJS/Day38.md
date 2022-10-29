@@ -61,4 +61,29 @@
 + 메뉴를 클릭 시 변경되는 css가 잠깐 보였다가 다시 원래 상태로 돌아가게 된다.
 + 왜 이러한 현상이 일어나는 걸까❓❓❓
   + 그 이유는 페이지가 이동되면서 변경된 값이 초기화 되기 때문이다.
-
++ 해결방법✅
+  + 버튼을 클릭했을 때 변경되게 하지 말고 해당 페이지에 진입했을 때 변경되게 하면 된다.
+  + 즉, 해당 페이지의 `url`을 가져와서 `if문`과 `if~else`문을 사용하여 해당 `url`이 탈때 `css`가 변경되게 해주면된다. 
+  + 해당 url을 가져오는 방법🧐
+    + `window.location.href.includes()` 사용!! 
+    + `window.location.href`는 페이지를 이동할 때 해주는 코드이다. 여기에 `includes()` 라는 특정 문자열을 포함하는지 여부를 확인해주는 함수를 사용한다.
+    ```node
+    <script>
+    $(document).ready(function(){
+        if(window.location.href.includes('callingRequestList')){
+          $('#btn1 a').css('fontFamily', 'Pretendard-Bold');
+          $('#dot1').css('display','block');
+        }else if(window.location.href.includes('openTestResult')){
+          $('#btn2 a').css('fontFamily', 'Pretendard-Bold');
+          $('#dot2').css('display','block');
+        }else if(window.location.href.includes('ethicsNotice')){
+          $('#btn3 a').css('fontFamily', 'Pretendard-Bold');
+          $('#dot3').css('display','block');
+        }else if(window.location.href.includes('notice')){
+          $('#btn4 a').css('fontFamily', 'Pretendard-Bold');
+          $('#dot4').css('display','block');
+        }
+      });
+    </script>
+    ```
+    + 이렇게 하면 해당 문자열이 포한됨 url을 탈 때 지정해준 css가 변경된다.
