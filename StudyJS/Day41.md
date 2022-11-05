@@ -37,9 +37,9 @@
   + `}).on('mouseleave', function() {` : 마우스가 `.menu` 요소를 떠날 경우 작동
   + `$(this).find('.menu_on').attr("src", $(this).find('.menu_on').attr("src").replace("-on", "-off"));`: 다시 이미지를 끝에 글자가 `-off`인 애로 바꿔준다.
   + `$(this).children('.menu_name').css('color','#808080')` : `.menu` 클래스의 바로 아래 요소인 `.menu_name`클래스의 글씨 색깔을 `#808080`로 바꾼다.
+
 + 여기서 포인트✅
-  + 이미지들의 이름을 맞춰줘야 한다는 것이다.
+  + 이미지들의 이름을 맞춰줘야 한다는 것이다🔑
   + 예) `off`이미지 이름: `monitoring-off.png"` ,  `on`이미지 이름: `monitoring-on.png"`
-
-
+  + 이렇게 하고 `-off`, `-on`만 바뀌게 적용하면 된다😎
 
